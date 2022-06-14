@@ -22,14 +22,18 @@ function RestaurantList(props){
   const GET_RESTAURANTS = gql`
     query {
       restaurants {
+        data{
         id
-        name
-        description
-        image {
+        attributes{
+          name
+          description
+          image {
           url
         }
+       }
       }
-    }
+     }
+   }
   `;
   const { loading, error, data } = useQuery(GET_RESTAURANTS)
   if (loading) return <p>Loading...</p>;

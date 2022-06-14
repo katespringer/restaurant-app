@@ -18,18 +18,29 @@ function Dishes({restId}){
 const GET_RESTAURANT_DISHES = gql`
   query($id: ID!) {
     restaurant(id: $id) {
+      data{
       id
-      name
-      dishes {
-        id
+      attributes{
         name
-        description
-        price
-        image {
-          url
+        dishes {
+          data{
+          id
+          attributes{
+            name
+            description
+            price
+            image {
+              data{
+                attributes{
+                  url
+                }
+              }
+            }
+          }
         }
       }
     }
+   }
   }
 `;
 
