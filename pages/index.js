@@ -33,4 +33,4 @@ function Home() {
         </ApolloProvider>
     );
   }
-  export default Home;
+export default Home;
