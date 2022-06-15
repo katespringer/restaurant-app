@@ -61,7 +61,7 @@ const GET_RESTAURANT_DISHES = gql`
 
     return (
       <>
-          {restaurant.dishes.map((res) => (
+          {restaurant.data.attributes.dishes.data.map((res) => (
             <Col xs="6" sm="4" style={{ padding: 0 }} key={res.id}>
               <Card style={{ margin: "0 10px" }}>
                 <CardImg
