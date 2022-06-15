@@ -46,7 +46,7 @@ function RestaurantList(props){
   console.log(`Query Data: ${data.restaurants}`)
 
 
-let searchQuery = data.restaurants.filter((res) =>{
+let searchQuery = data.restaurants.data.filter((res) =>{
     return res.name.toLowerCase().includes(props.search)
   })
 
