@@ -58,7 +58,7 @@ let restId = searchQuery[0].id
   };
 if(searchQuery.length > 0){
   const restList = searchQuery.map(({ id, attributes }) => (
-    <Col xs="6" sm="4" key={res.id}>
+    <Col xs="6" sm="4" key={id}>
       <Card style={{ margin: "0 0.5rem 20px 0.5rem" }}>
         <CardImg
           top={true}
@@ -66,7 +66,7 @@ if(searchQuery.length > 0){
            src={`http://localhost:1337${attributes.image.data.attributes.url}`}
         />
         <CardBody>
-          <CardText>{res.description}</CardText>
+          <CardText>{attributes.description}</CardText>
         </CardBody>
         <div className="card-footer">
 
