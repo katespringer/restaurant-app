@@ -63,7 +63,7 @@ if(searchQuery.length > 0){
         <CardImg
           top={true}
           style={{ height: 200 }}
-          src={`${API_URL}${attributes.image.data[0].attributes.url}`}
+           src={`http://localhost:1337${restaurant.attributes.image.data.attributes.url}`}
         />
         <CardBody>
           <CardText>{res.description}</CardText>
