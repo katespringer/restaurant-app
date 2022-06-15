@@ -28,8 +28,8 @@ function RestaurantList(props){
           name
           description
           image {
-          url
-        }
+            url
+          }
        }
       }
      }
