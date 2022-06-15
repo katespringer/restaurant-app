@@ -63,7 +63,7 @@ if(searchQuery.length > 0){
         <CardImg
           top={true}
           style={{ height: 200 }}
-           src={`http://localhost:1337${attributes.image.data.attributes.url}`}
+           src={`${attributes.image.data.attributes.url}`}
         />
         <CardBody>
           <CardText>{attributes.description}</CardText>
