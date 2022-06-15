@@ -15,7 +15,7 @@ export const registerUser = (username, email, password) => {
   }
   return new Promise((resolve, reject) => {
     axios
-      .post(`${API_URL}/auth/local/register`, { username, email, password })
+      .post(`${API_URL}api/auth/local/register`, { username, email, password })
       .then((res) => {
         //set token response from Strapi for server validation
         Cookie.set("token", res.data.jwt);
@@ -40,7 +40,7 @@ export const login = (identifier, password) => {
 
   return new Promise((resolve, reject) => {
     axios
-      .post(`${API_URL}/auth/local/`, { identifier, password })
+      .post(`${API_URL}api/auth/local/`, { identifier, password })
       .then((res) => {
         //set token response from Strapi for server validation
         Cookie.set("token", res.data.jwt);
