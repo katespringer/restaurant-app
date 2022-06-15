@@ -56,25 +56,31 @@ let restId = searchQuery[0].id
   const renderDishes = (restaurantID) => {
     return (<Dishes restId={restaurantID}> </Dishes>)
   };
-if(searchQuery.length > 0){
-  const restList = searchQuery.map((res) => (
-    <Col xs="6" sm="4" key={res.id}>
-      <Card style={{ margin: "0 0.5rem 20px 0.5rem" }}>
-        <CardImg
-          top={true}
-          style={{ height: 200 }}
-           src={`http://localhost:1337${attributes.image.data.attributes.url}`}
-        />
-        <CardBody>
-          <CardText>{res.description}</CardText>
-        </CardBody>
-        <div className="card-footer">
-        
-        <Button color="info" onClick={()=> setRestaurantID(res.id)}>{res.name}</Button>
-         
-        </div>
-      </Card>
-    </Col>
+if (searchQuery.length > 0) {
+      return (
+        <Row>
+          {searchQuery.map(({ id, attributes }) => (
+            <Col xs="6" sm="4" key={id}>
+              <Card style={{ margin: "0 0.5rem 20px 0.5rem" }}>
+                <CardImg
+                  top={true}
+                  style={{ height: 250 }}
+                  src={`http://localhost:1337${attributes.image.data[0].attributes.url}`}
+                />
+                <CardBody>
+                  <CardTitle>{attributes.name}</CardTitle>
+                  <CardText>{attributes.description}</CardText>
+                </CardBody>
+                <div className="card-footer">
+                  <Link
+                    as={`/restaurants/${id}`}
+                    href={`/restaurants?id=${id}`}
+                  >
+                    <a className="btn btn-primary">View</a>
+                  </Link>
+                </div>
+              </Card>
+            </Col>
   ))
 
   return(
