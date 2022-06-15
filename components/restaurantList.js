@@ -28,10 +28,13 @@ function RestaurantList(props){
             name
             description
             image {
-              attributes {
+              data {
+                id
+                attributes {
                   url
-                }
-             }
+                 }   
+              }
+            }
           }
         }
       }
