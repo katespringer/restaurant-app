@@ -46,10 +46,10 @@ function RestaurantList(props){
   console.log(`Query Data: ${data.restaurants}`)
 
 
-let searchQuery = data.restaurants.data.filter((res) =>{
-    return res.name.toLowerCase().includes(props.search)
-  })
-
+if (data.restaurants?.data?.length) {
+    const searchQuery = data.restaurants.data.filter((query) =>
+      query.attributes.name.toLowerCase().includes(props.search)
+    );
 let restId = searchQuery[0].id
  
 // definet renderer for Dishes
