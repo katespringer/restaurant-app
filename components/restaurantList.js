@@ -29,7 +29,6 @@ function RestaurantList(props){
             description
             image {
               data {
-                id
                 attributes {
                   url
                  }   
