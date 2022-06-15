@@ -25,9 +25,9 @@ function RestaurantList(props){
         data {
           id
           attributes {
-            Name
-            Description
-            Image {
+            name
+            description
+            image {
               data {
                 id
                 attributes {
