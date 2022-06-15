@@ -91,4 +91,4 @@ const GET_RESTAURANT_DISHES = gql`
           return <h1> No Dishes</h1>
         }
     }
-    export default Dishes
+export default Dishes
