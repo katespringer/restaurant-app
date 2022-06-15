@@ -16,23 +16,26 @@ function Dishes({restId}){
   const {addItem} = useContext(AppContext)
 
 const GET_RESTAURANT_DISHES = gql`
-  query($id: ID!) {
-    restaurant(id: $id) {
-      data{
-      id
-      attributes{
-        name
-        dishes {
-          data{
+    query GetRestaurantsDishes($id: ID!) {
+      restaurant(id: $id) {
+        data {
           id
-          attributes{
+          attributes {
             name
-            description
-            price
-            image {
-              data{
-                attributes{
-                  url
+            dishes {
+              data {
+                id
+                attributes {
+                  name
+                  description
+                  price
+                  image {
+                    data {
+                      attributes {
+                        url
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -40,9 +43,7 @@ const GET_RESTAURANT_DISHES = gql`
         }
       }
     }
-   }
-  }
-`;
+  `;
 
   const router = useRouter();
 
