@@ -81,7 +81,7 @@ if (searchQuery.length > 0) {
                 </div>
               </Card>
             </Col>
-  ))
+  ))}
 
   return(
 
