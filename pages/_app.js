@@ -38,7 +38,7 @@ function MyApp(props){
       temp.quantity = 1;
       var newCart = {
           items: [...state.cart.items,temp],
-          total: state.cart.total + item.price,
+          total: state.cart.total + item.attributes.price,
       }
       setState({cart:newCart})
       // console.log(`Total items: ${JSON.stringify(newCart)}`)
@@ -52,7 +52,7 @@ function MyApp(props){
              }else{
             return item;
           }}),
-          total: state.cart.total + item.price,
+          total: state.cart.total + item.attributes.price,
         }
     }
     setState({cart: newCart});  // problem is this is not updated yet
@@ -71,14 +71,14 @@ function MyApp(props){
          }else{
         return item;
       }}),
-      total: state.cart.total - item.price,
+      total: state.cart.total - item.attributes.price,
       }
       //console.log(`NewCart after remove: ${JSON.stringify(newCart)}`)
     } else { // only 1 in the cart so remove the whole item
       console.log(`Try remove item ${JSON.stringify(foundItem)}`)
       const index = items.findIndex((i) => i.id === foundItem.id);
       items.splice(index, 1);
-      var newCart= { items: items, total: state.cart.total - item.price } 
+      var newCart= { items: items, total: state.cart.total - item.attributes.price } 
     }
     setState({cart:newCart});
   }
