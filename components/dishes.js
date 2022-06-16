@@ -71,7 +71,7 @@ const GET_RESTAURANT_DISHES = gql`
                 />
                 <CardBody>
                 <CardTitle>{res.attributes.name}</CardTitle>
-                <CardText>{res.attributes.description}{res.attributes.price}</CardText>
+                <CardText>{res.attributes.description}</CardText>
               </CardBody>
               <div className="card-footer">
                 <Button
