@@ -4,7 +4,7 @@ import { Button, Card, CardBody, CardTitle, Badge } from "reactstrap";
 import AppContext from "./context"
 import Link from "next/link"
 // we can pass cart data in via props method 
-// the alternative is using useContext as below
+// the alternative is using use as below
 function Cart() {
   let isAuthenticated = true;
   let {cart,addItem,removeItem} = useContext(AppContext);
@@ -29,8 +29,8 @@ function Cart() {
                 key={item.id}
               >
                 <div>
-                  <span id="item-price">&nbsp; ${item.price}</span>
-                  <span id="item-name">&nbsp; {item.name}</span>
+                  <span id="item-price">&nbsp; ${item.attributes.price}</span>
+                  <span id="item-name">&nbsp; {item.attributes.name}</span>
                 </div>
                 <div>
                   <Button
