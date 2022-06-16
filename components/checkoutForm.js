@@ -57,8 +57,12 @@ function CheckoutForm() {
     });
 
     if (!response.ok) {
+      console.log(response);
       setError(response.statusText);
-      console.log("SUCCESS");
+      console.log(response.statusText);
+    }
+    if (response.ok) {
+      setError("Payment Processed Successfully!");
     }
 
     // OTHER stripe methods you can use depending on app
