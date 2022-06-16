@@ -70,26 +70,28 @@ const GET_RESTAURANT_DISHES = gql`
                   src={`${res.attributes.image.data.attributes.url}`}
                 />
                 <CardBody>
-                  <CardTitle>{res.name}</CardTitle>
-                  <CardText>{res.description}</CardText>
-                </CardBody>
-                <div className="card-footer">
-                  <Button color="info"
-                    outline
-                    color="primary"
-                    onClick = {()=> addItem(res)}
-                  >
-                    + Add To Cart
-                  </Button>
-                  
-                </div>
-              </Card>
-            </Col>
-          ))}
-        </>
-        )}
-        else{
-          return <h1> No Dishes</h1>
-        }
-    }
-export default Dishes
+                <CardTitle>{res.attributes.name}</CardTitle>
+                <CardText>{res.attributes.description}</CardText>
+              </CardBody>
+              <div className="card-footer">
+                <Button
+                  color="info"
+                  outline
+                  onClick={() => {
+                    addItem(res);
+                    console.log(" addItem(res)", res);
+                  }}
+                >
+                  + Add To Cart
+                </Button>
+              </div>
+            </Card>
+          </Col>
+        ))}
+      </>
+    );
+  } else {
+    return <h1> No Dishes</h1>;
+  }
+}
+export default Dishes;
